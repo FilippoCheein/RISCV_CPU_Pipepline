@@ -6,16 +6,13 @@
 // Create Date: 01/04/2019 04:32:12 PM
 // Design Name: 
 // Module Name: PIPELINED_OTTER_CPU
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
+//
+// Description:
+// This is a pipelined version of the file OTTER_CPU which is a multicycle CPU.
+// It includes a Branch prediction unit that addresses control hazards by flushing if branch taken.
+// It contains a forwarding unit for data hazards at execution stage. 
+// It also handles data hazard at MEM stage with a stall.
+//
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -113,15 +110,6 @@ module OTTER_MCU(input CLK,
       assign if_inst.pc = pc;
       assign if_inst.next_pc = next_pc;
      
-          // Branch, JAL  JALR flush next 2 instruction
- /*    always_comb
-     begin
-     if (( if_inst.pc_sel != 0 || de_inst.pc_sel != 0) )
-       flush = 1;
-     else
-       flush = 0;
-     end
-   */  
      always_ff @(posedge CLK) begin
                 // write 
                if_de_inst.pc <= if_inst.pc;
