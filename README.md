@@ -6,9 +6,7 @@ The memory is dual port so to avoid Structural Hazards.
 The hierarchy of the files is:
 
 * clock_tb: to give timing to the system.
-
  * OTTER_Wrapper: to connect the cpu to peripherals like 7-segments display, VGA, UART, Keyboard, Board LEDs & Buttons.
-
    * OTTER_MCU: This is the CPU of the systems. It is pipelined in 5 stages. 
 
 Fetch stage:
