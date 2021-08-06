@@ -2,6 +2,7 @@
 
 This repository contains a SystemVerilog version of a RISC-V CPU Pipelined with hazard control applied.
 The memory is dual port so to avoid Structural Hazards.
+Testbancs are included to verify the design.
 
 The hierarchy of the files is:
 
