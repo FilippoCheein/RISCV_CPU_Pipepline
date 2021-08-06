@@ -5,18 +5,20 @@ The memory is dual port so to avoid Structural Hazards.
 
 The hierarchy of the files is:
 
-1. clock_tb: to give timing to the system.
-2. OTTER_Wrapper: to connect the cpu to peripherals like 7-segments display, VGA, UART, Keyboard, Board LEDs & Buttons.
-3. OTTER_MCU: This is the CPU of the systems. It is pipelined in 5 stages. 
+    clock_tb: to give timing to the system.
+       OTTER_Wrapper: to connect the cpu to peripherals like 7-segments display, VGA, UART, Keyboard, Board LEDs & Buttons.
+         OTTER_MCU: This is the CPU of the systems. It is pipelined in 5 stages. 
 
 Pipeline MCU:
 
 * Fetch stage:
- PCdatasrc      : MUX selecting the correct input to the pc
- PC             : Register that either load the value inputted from the PCdatasearch or it reset to zero.
- Instruction Memory: based on the PC value it outputs the instruction stored in that memory location.
+
+          PCdatasrc      : MUX selecting the correct input to the pc
+          PC             : Register that either load the value inputted from the PCdatasearch or it reset to zero.
+          Instruction Memory: based on the PC value it outputs the instruction stored in that memory location.
 
 * Decode Stage:
+          
           CU_DECODER_PIPE: Based on the instruction it sends out signals to register, data memory and ALU
           Register File: Stores values throughout the program run. 
                           At this stage ypu can read from the register file.
