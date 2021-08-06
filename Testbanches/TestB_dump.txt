@@ -1,0 +1,26 @@
+
+build/program.elf:     file format elf32-littleriscv
+
+Contents of section .text:
+ 0000 13052003 93051000 1306e0fc 630ea000  .. .........c...
+ 0010 631c0000 634a0500 6358a000 63660600  c...cJ..cX..cf..
+ 0020 6374c000 6ff09ffe 6f000000           ct..o...o...    
+
+Disassembly of section .text:
+
+00000000 <tests-0xc>:
+   0:	03200513          	li	a0,50
+   4:	00100593          	li	a1,1
+   8:	fce00613          	li	a2,-50
+
+0000000c <tests>:
+   c:	00a00e63          	beq	zero,a0,28 <fail>
+  10:	00001c63          	bnez	zero,28 <fail>
+  14:	00054a63          	bltz	a0,28 <fail>
+  18:	00a05863          	blez	a0,28 <fail>
+  1c:	00066663          	bltu	a2,zero,28 <fail>
+  20:	00c07463          	bgeu	zero,a2,28 <fail>
+  24:	fe9ff06f          	j	c <tests>
+
+00000028 <fail>:
+  28:	0000006f          	j	28 <fail>
