@@ -33,8 +33,9 @@ Pipeline MCU:
 * Memory Stage:
           Data Memory: at This stage you vsn read or write to the memory.
 
-*WriteBack Stage
+* WriteBack Stage
           regWriteBack: based on the signal coming from the decoder it output a determined value to he register file.
+          
           Register File: at this stage it is possible to write to the register file.
        
        
