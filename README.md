@@ -24,6 +24,7 @@ Pipeline MCU:
           Hazard Detection Unit: Sends signals if a possible hazard is detected 
 
 * Execute Stage:
+          
           Target Gemneraor: send values to the PCdatasrc for jump, branch jalr.
           Branch CondGenerator: sends signals to avoid control hazards.
           ALU            : Does selected math based on decoder signals
@@ -31,12 +32,13 @@ Pipeline MCU:
           ForwardA_ALU, ForwardB_ALU: signal from forwarding unit chooses whether to farward the value to the ALU
 
 * Memory Stage:
+          
           Data Memory: at This stage you vsn read or write to the memory.
 
 * WriteBack Stage
-          regWriteBack: based on the signal coming from the decoder it output a determined value to he register file.
-          
-          Register File: at this stage it is possible to write to the register file.
+         
+         regWriteBack: based on the signal coming from the decoder it output a determined value to he register file.
+         Register File: at this stage it is possible to write to the register file.
        
        
 Pipeline CPU Design Diagram: 
