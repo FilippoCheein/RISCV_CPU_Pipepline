@@ -12,7 +12,7 @@ OTTER_Wrapper: to connect the cpu to peripherals like 7-segments display, VGA, U
 OTTER_MCU: This is the CPU of the systems. It is pipelined in 5 stages. 
 
 Fetch stage:
- PCdatasrc      : MUX selecting the correct input to the pc
+ \n PCdatasrc      : MUX selecting the correct input to the pc
  PC             : Register that either load the value inputted from the PCdatasearch or it reset to zero.
  Instruction Memory: based on the PC value it outputs the instruction stored in that memory location.
 
